@@ -2,36 +2,35 @@
 {
     static void Main(string[] args)
     {
-        bool isExit = false;
-        int number;
+        int number = 0;
 
-        Console.WriteLine("Введите любое число:");
+        number = GetInt(ref number);
+
+    }
+
+    static int GetInt(ref int nubmer)
+    {
+        bool isExit = false;
 
         while (isExit == false)
         {
+            Console.WriteLine("Введите Число:");
+
+            int returnedNumber;
             string userInput = Console.ReadLine();
-            number = ReturnNumber(userInput);
-            
-            if (number != 0)
+            bool successfulConversion = int.TryParse(userInput, out returnedNumber);
+
+            if (successfulConversion)
             {
+                Console.WriteLine("Конвертация прошла успешно! Записано число:" + returnedNumber);
                 isExit = true;
             }
-        }
-    }
+            else
+            {
+                Console.WriteLine("Неверные данные, попробуйте снова!");
+            }
 
-    static int ReturnNumber(string userInput)
-    {
-        int returnedNumber;
-        bool success = int.TryParse(userInput, out returnedNumber);
-
-        if (success)
-        {
-            Console.WriteLine("Конвертация прошла успешно! Записано число:" + returnedNumber);
+            return returnedNumber;
         }
-        else
-        {
-            Console.WriteLine("Неверные данные, попробуйте снова!");
-        }
-        return returnedNumber;
     }
 }
