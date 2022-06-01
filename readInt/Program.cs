@@ -4,19 +4,18 @@
     {
         int number = 0;
 
-        number = GetInt(ref number);
-
+        number = GetInt(number);
     }
 
-    static int GetInt(ref int nubmer)
+    static int GetInt(int nubmer)
     {
         bool isExit = false;
+        int returnedNumber = 0;
 
         while (isExit == false)
         {
             Console.WriteLine("Введите Число:");
-
-            int returnedNumber;
+            
             string userInput = Console.ReadLine();
             bool successfulConversion = int.TryParse(userInput, out returnedNumber);
 
@@ -29,8 +28,7 @@
             {
                 Console.WriteLine("Неверные данные, попробуйте снова!");
             }
-
-            return returnedNumber;
         }
+        return returnedNumber;
     }
 }
