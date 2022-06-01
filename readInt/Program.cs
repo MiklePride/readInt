@@ -4,6 +4,7 @@
     {
         bool isExit = false;
         int number;
+
         Console.WriteLine("Введите любое число:");
 
         while (isExit == false)
@@ -15,7 +16,6 @@
             {
                 isExit = true;
             }
-
         }
     }
 
@@ -32,7 +32,6 @@
         {
             Console.WriteLine("Неверные данные, попробуйте снова!");
         }
-
         return returnedNumber;
     }
 }
