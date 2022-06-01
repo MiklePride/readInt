@@ -10,6 +10,12 @@
         {
             string userInput = Console.ReadLine();
             number = ReturnNumber(userInput);
+            
+            if (number != 0)
+            {
+                isExit = true;
+            }
+
         }
     }
 
@@ -20,12 +26,13 @@
 
         if (success)
         {
-            Console.WriteLine(returnedNumber);
-            return returnedNumber;
+            Console.WriteLine("Конвертация прошла успешно! Записано число:" + returnedNumber);
         }
         else
         {
-            Console.WriteLine("Неверные данные!");
+            Console.WriteLine("Неверные данные, попробуйте снова!");
         }
+
+        return returnedNumber;
     }
 }
